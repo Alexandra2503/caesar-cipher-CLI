@@ -17,16 +17,13 @@ const caesarCipherEncode = (chunk, shift) => {
                 if(output > ascii.lastLowercaseLetterCode) {
                     res += String.fromCharCode(output - ascii.lastLowercaseLetterCode + ascii.firstLowercaseLetterCode - 1)
                 } else res += String.fromCharCode(output)
-            console.log( chunk[i] + '\t' + output + '\t' + res + '\n');
         } else if (chunk[i] >= ascii.firstUppercaseLetterCode 
                 && chunk[i] <= ascii.lastUppercaseLetterCode) {
                     if(output > ascii.lastUppercaseLetterCode) {
                         res += String.fromCharCode(output - ascii.lastUppercaseLetterCode + ascii.firstUppercaseLetterCode - 1)
                     } else res += String.fromCharCode(output)
-                console.log( chunk[i] + '\t' + output + '\t' + res + '\n');
-        }
+        } else res += String.fromCharCode(chunk[i])
     }
-    console.log('Result: ' + res)
     return res
 } 
 
